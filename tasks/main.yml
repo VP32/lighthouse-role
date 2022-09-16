@@ -14,5 +14,5 @@
   become: true
   ansible.builtin.unarchive:
     src: ./master.zip
-    dest: /usr/share/nginx/html
+    dest: "{{ lighthouse_dir }}"
     remote_src: true

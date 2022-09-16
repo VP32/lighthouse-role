@@ -1,2 +1,2 @@
 ---
-lighthouse_zip_url: "https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip"
+lighthouse_dir: "/usr/share/nginx/html"
