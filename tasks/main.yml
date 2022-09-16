@@ -1,0 +1,18 @@
+---
+- name: Install unzip
+  become: true
+  tags: install_distrib
+  ansible.builtin.yum:
+    name: unzip
+    state: present
+- name: Download Lighthouse ZIP
+  ansible.builtin.get_url:
+    url: "{{ lighthouse_zip_url }}"
+    dest: ./master.zip
+- name: Extract Lighthouse ZIP
+  tags: install_distrib
+  become: true
+  ansible.builtin.unarchive:
+    src: ./master.zip
+    dest: /usr/share/nginx/html
+    remote_src: true
